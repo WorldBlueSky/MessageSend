@@ -38,7 +38,7 @@ public class SendSmsImpl implements SendSms{
              * 你也可以直接在代码中写死密钥对，但是小心不要将代码复制、上传或者分享给他人，
              * 以免泄露密钥对危及你的财产安全。
              * SecretId、SecretKey 查询: https://console.cloud.tencent.com/cam/capi */
-            Credential cred = new Credential("AKID5ze3B2dx0mGUR6UbR0IK4XjdHekZ7OO7", "UhdI1c3JNCn9F6h27xXrvjIbeRzHJ5ct");
+            Credential cred = new Credential("secreId", "SecretKey");
 
             // 实例化一个http选项，可选，没有特殊需求可以跳过
             HttpProfile httpProfile = new HttpProfile();
@@ -79,12 +79,12 @@ public class SendSmsImpl implements SendSms{
 
             /* 短信应用ID: 短信SdkAppId在 [短信控制台] 添加应用后生成的实际SdkAppId，示例如1400006666 */
             // 应用 ID 可前往 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage) 查看
-            String sdkAppId = "1400723533";
+            String sdkAppId = "XXXXX";
             req.setSmsSdkAppId(sdkAppId);
 
             /* 短信签名内容: 使用 UTF-8 编码，必须填写已审核通过的签名 */
             // 签名信息可前往 [国内短信](https://console.cloud.tencent.com/smsv2/csms-sign) 或 [国际/港澳台短信](https://console.cloud.tencent.com/smsv2/isms-sign) 的签名管理查看
-            String signName = "编程学习进阶之路公众号";
+            String signName = "XXX公众号";
             req.setSignName(signName);
 
             /* 模板 ID: 必须填写已审核通过的模板 ID */

@@ -26,7 +26,7 @@ public class SmsApiController {
     public Random random = new Random();
 
     @RequestMapping("/send")
-    public String sendCode(@RequestParam(value = "phone") String phone) {
+    public String sendCode(@RequestParam(value = "phone",required = true) String phone) {
         //调用发送的方法即可
 
         //1、连接Redis，查找手机验证码是否存在
@@ -47,7 +47,7 @@ public class SmsApiController {
             newCode += random.nextInt(10);
         }
         // 将6位随机验证码对手机号进行发送
-        boolean idSend = sendSms.send(phone,"1511343",newCode);
+        boolean idSend = sendSms.send(phone,"XXXXX",newCode);
 
         //=====================================================
 
